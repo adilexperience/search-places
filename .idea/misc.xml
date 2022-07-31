@@ -3,14 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/development/AndroidProjects/search-places/app/src/main/res/layout/fragment_add_place.xml" value="0.14628623188405798" />
-        <entry key="..\:/development/AndroidProjects/search-places/app/src/main/res/layout/fragment_home.xml" value="0.14628623188405798" />
-        <entry key="..\:/development/AndroidProjects/search-places/app/src/main/res/layout/fragment_search_place.xml" value="0.2" />
-        <entry key="..\:/development/AndroidProjects/search-places/app/src/main/res/layout/place.xml" value="0.2" />
-        <entry key="..\:/development/AndroidProjects/search-places/app/src/main/res/menu/activity_main_drawer.xml" value="0.2" />
-        <entry key="..\:/development/AndroidProjects/search-places/app/src/main/res/menu/dashboard.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_place_detail.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/app_bar_dashboard.xml" value="0.12943262411347517" />
         <entry key="app/src/main/res/layout/content_dashboard.xml" value="0.12943262411347517" />
+        <entry key="app/src/main/res/layout/fragment_add_place.xml" value="0.12135416666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/place.xml" value="0.12892603850050657" />
       </map>

@@ -17,15 +17,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobile.searchplaces.R;
 import com.mobile.searchplaces.adapters.PlacesAdapter;
+import com.mobile.searchplaces.database.DatabaseHelper;
 import com.mobile.searchplaces.databinding.FragmentHomeBinding;
 import com.mobile.searchplaces.models.PlaceModel;
+
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
     private RecyclerView rvPlaces;
 
     private PlacesAdapter placesAdapter;
-    private ArrayAdapter<PlaceModel> places;
+    private ArrayList<PlaceModel> places = new ArrayList<PlaceModel>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +39,8 @@ public class HomeFragment extends Fragment {
 
 
         // get places from database and display
+        DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
+        places =  databaseHelper.getAllPlaces();
 
         placesAdapter = new PlacesAdapter(getContext(), places);
 

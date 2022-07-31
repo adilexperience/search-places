@@ -3,6 +3,7 @@ package com.mobile.searchplaces.ui.search_place;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -15,7 +16,10 @@ import android.widget.ImageView;
 
 import com.mobile.searchplaces.R;
 import com.mobile.searchplaces.adapters.PlacesAdapter;
+import com.mobile.searchplaces.database.DatabaseHelper;
 import com.mobile.searchplaces.models.PlaceModel;
+
+import java.util.ArrayList;
 
 public class SearchPlaceFragment extends Fragment {
     EditText etSearch;
@@ -23,7 +27,7 @@ public class SearchPlaceFragment extends Fragment {
 
     RecyclerView rvSearch;
     private PlacesAdapter placesAdapter;
-    private ArrayAdapter<PlaceModel> places;
+    private ArrayList<PlaceModel> places = new ArrayList<PlaceModel>();
     public SearchPlaceFragment() {
         // Required empty public constructor
     }
@@ -37,6 +41,23 @@ public class SearchPlaceFragment extends Fragment {
         etSearch = view.findViewById(R.id.et_search);
         ivSearch = view.findViewById(R.id.iv_search);
         rvSearch = view.findViewById(R.id.rv_search_places);
+
+        ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = etSearch.getText().toString().trim();
+
+                DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
+                places = databaseHelper.getSearchedPlace(name);
+
+                placesAdapter = new PlacesAdapter(getContext(), places);
+
+                rvSearch.setHasFixedSize(true);
+                rvSearch.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                rvSearch.setAdapter(placesAdapter);
+            }
+        });
 
         return view;
     }

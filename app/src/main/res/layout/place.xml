@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    android:id="@+id/cv_place"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,9 +15,10 @@
         <ImageView
             android:id="@+id/iv_place"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="150dp"
             android:src="@drawable/search"
             android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
             />
 
         <LinearLayout
@@ -38,7 +41,7 @@
             <TextView
                 android:id="@+id/tv_description"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Details of place will show here"
                 android:textSize="16sp"
                 android:layout_marginBottom="2dp"

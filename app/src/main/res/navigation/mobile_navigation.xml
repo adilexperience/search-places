@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_add_place"
         android:name="com.mobile.searchplaces.ui.add_place.AddPlaceFragment"
         android:label="@string/menu_add_place"
         tools:layout="@layout/fragment_add_place" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_search_place"
         android:name="com.mobile.searchplaces.ui.search_place.SearchPlaceFragment"
         android:label="@string/menu_search_place"
         tools:layout="@layout/fragment_search_place" />

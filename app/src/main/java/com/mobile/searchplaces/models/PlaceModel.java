@@ -1,16 +1,18 @@
 package com.mobile.searchplaces.models;
 
-public class PlaceModel {
+import java.io.Serializable;
+
+public class PlaceModel implements Serializable {
     int id;
     String name;
     String description;
-    String image;
+    byte[] image;
     double rating;
 
     public PlaceModel() {
     }
 
-    public PlaceModel(int id, String name, String description, String image, double rating) {
+    public PlaceModel(int id, String name, String description, byte[] image, double rating) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -42,11 +44,11 @@ public class PlaceModel {
         this.description = description;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
