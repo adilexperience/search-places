@@ -4,34 +4,46 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.mobile.searchplaces.R;
+import com.mobile.searchplaces.adapters.PlacesAdapter;
 import com.mobile.searchplaces.databinding.FragmentHomeBinding;
+import com.mobile.searchplaces.models.PlaceModel;
 
 public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private RecyclerView rvPlaces;
+
+    private PlacesAdapter placesAdapter;
+    private ArrayAdapter<PlaceModel> places;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
-    }
+        rvPlaces = view.findViewById(R.id.rv_popular_places);
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+
+        // get places from database and display
+
+        placesAdapter = new PlacesAdapter(getContext(), places);
+
+        rvPlaces.setHasFixedSize(true);
+        rvPlaces.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        rvPlaces.setAdapter(placesAdapter);
+
+        return view;
     }
 }

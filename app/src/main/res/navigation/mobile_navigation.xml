@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.mobile.searchplaces.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.mobile.searchplaces.ui.add_place.AddPlaceFragment"
+        android:label="@string/menu_add_place"
+        tools:layout="@layout/fragment_add_place" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.mobile.searchplaces.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="com.mobile.searchplaces.ui.search_place.SearchPlaceFragment"
+        android:label="@string/menu_search_place"
+        tools:layout="@layout/fragment_search_place" />
 </navigation>
